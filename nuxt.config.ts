@@ -1,5 +1,3 @@
-console.log("\n\nNODE_ENV", process.env.NODE_ENV, "\n\n");
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
