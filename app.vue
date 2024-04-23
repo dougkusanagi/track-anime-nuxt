@@ -15,16 +15,6 @@ const animes_list = animes.value!.data.data
 async function search() {
   await $fetch<AnimeType>(`/api/animes?search=${query.value}`)
 }
-
-useHead({
-  title: "Track Anime",
-  htmlAttrs: {
-    lang: "eng"
-  },
-  meta: [
-    { name: "description", content: "Track your favorite anime" }
-  ]
-})
 </script>
 
 <template>
@@ -32,7 +22,7 @@ useHead({
     <div class="flex items-center h-16 bg-white/10">
       <header class="container flex justify-between mx-auto">
         <h1 class="text-3xl">
-          <AppLink to="/" variant="link">Track Anime</AppLink>
+          <AppLink to="/" variant="link">Track Animes</AppLink>
         </h1>
 
         <nav class="flex items-center gap-4">
@@ -60,7 +50,7 @@ useHead({
       <section class="grid grid-cols-7 gap-4 mt-4">
         <div class="mb-4 h-96" v-for="anime in animes_list">
           <!-- Anime Card -->
-          <img class="bg-contain h-80" :src="anime.images.webp.image_url" />
+          <img class="bg-cover h-80" :src="anime.images.webp.image_url" />
 
           <div class="mt-2">
             <input class="w-full" type="number" value="0" />
