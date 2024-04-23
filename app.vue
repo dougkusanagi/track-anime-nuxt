@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import type { Anime } from "~/types/Anime";
+import type { Anime as AnimeType, AnimePagination as AnimePaginationType } from "~/types/Anime";
 import AnimePagination from "./components/AnimePagination.vue";
 
 const query = ref<string>("")
-const { data } = await useFetch("/api/animes", { transform: (data) => data.data })
-const pagination = computed(() => data.value.pagination)
-const animes_list = computed(() => data.value.data as Anime[])
+const { data: animes } = await useFetch<{
+  data: {
+    data: AnimeType[],
+    pagination: AnimePaginationType,
+  }
+}>("/api/animes")
+const pagination = animes.value!.data.pagination
+const animes_list = animes.value!.data.data
 
 async function search() {
-  await $fetch<Anime>(`/api/animes?search=${query.value}`)
+  await $fetch<AnimeType>(`/api/animes?search=${query.value}`)
 }
 
 useHead({
