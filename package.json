@@ -10,11 +10,20 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.395.0",
     "nuxt": "^3.12.2",
+    "radix-vue": "^1.8.3",
+    "shadcn-nuxt": "^0.10.4",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
+  "packageManager": "pnpm@9.0.5+sha1.6db99351548f394a1d96aa1de98dec032aef8823",
   "devDependencies": {
-    "shadcn-nuxt": "^0.10.4"
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "typescript": "^5.4.5"
   }
 }
